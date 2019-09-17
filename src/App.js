@@ -1,13 +1,19 @@
-import React from 'react';
-import ButtonAppBar from './topNav/topNav';
+import React, { Component } from 'react';
+import TopNav from './navigation/topNav';
+import SideNav from './navigation/sideNav';
 
-function App() {
-  return (
-    <div>
-      <ButtonAppBar />
-      <h1> HELLO</h1>
-    </div>
-  );
+class App extends Component {
+  state = {
+    isSideNavOpen: false
+  }
+  render() {
+    return (
+      <div>
+        <TopNav isSideNavOpen={this.state.isSideNavOpen}/>
+        <SideNav />
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -34,30 +34,13 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function TemporaryDrawer() {
+export default function SideNav(props) {
   const classes = useStyles();
-  const [state, setState] = React.useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  });
-
-  const toggleDrawer = (side, open) => event => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
-    }
-
-    setState({ ...state, [side]: open });
-  };
 
   const sideList = side => (
     <div
       className={classes.list}
-      role="presentation"
-      onClick={toggleDrawer(side, false)}
-      onKeyDown={toggleDrawer(side, false)}
-    >
+      role="presentation" >
       <List>
           <ListSubheader>Menu</ListSubheader>
           <ListItem button onClick={() => console.log('HOME clicked') }>
@@ -113,8 +96,7 @@ export default function TemporaryDrawer() {
 
   return (
     <div>
-      <Button onClick={toggleDrawer('left', true)}>Open Left</Button>
-      <Drawer open={state.left} onClose={toggleDrawer('left', false)}>
+      <Drawer open={props.isSideNavOpen} onClose={props.onClickingMenu}>
         {sideList('left')}
       </Drawer>
     </div>

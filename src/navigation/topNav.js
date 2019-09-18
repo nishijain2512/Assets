@@ -14,6 +14,7 @@ import avatarImage from '../assests/images/avatar.png';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+    backgroundColor: '#2979ff'
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -26,26 +27,22 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function ButtonAppBar (props) {
+export default function TopNav (props) {
 
   const classes = useStyles();
-
-  const toggleSideNav = () => {
-    
-  }
 
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
             <img edge="start" src={logoImage} alt="logo"/>
-          <IconButton className={classes.menuButton} onClick={() => toggleSideNav(props.isSideNavOpen)} color="inherit" aria-label="open drawer">
+          <IconButton className={classes.menuButton} onClick={props.onClickingMenu} color="inherit" aria-label="open drawer">
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" align="center" className={classes.title} noWrap>
             Assets Management
           </Typography>
-          <Button color="inherit">Add</Button>
+          <Button color="inherit" onClick={()=> console.log('TopNav Add button clicked')}>Add</Button>
           <IconButton>
             <AppsIcon />
           </IconButton>

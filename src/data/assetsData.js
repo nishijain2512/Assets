@@ -1,4 +1,4 @@
-[{
+let assetsData = [{
 	"id": 4816,
 	"name": "Go Daddy For Good",
 	"client": "GDY",
@@ -122,3 +122,7 @@
 		"imgsrc": ""
 	}]
 }]
+
+module.exports = {
+	assetsData
+}

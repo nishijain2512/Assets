@@ -121,6 +121,56 @@ const assetsData = [{
 		"sizeDimension": "inches",
 		"imgsrc": ""
 	}]
+},
+{
+	"id": 4828,
+	"name": "Box LAbels",
+	"client": "GDY",
+	"store": "GoDaddy 1",
+	"type": "Company Logo",
+	"imgsrc": "",
+	"versions": [{
+		"id": 4828-1,
+		"logoType": "Spot Color",
+		"stitchCount": null,
+		"isResizable": true,
+		"description": "Something the user entered when they made this variation...",
+		"colors": ["rgb(255, 255, 255)", "rgb(45, 41, 38)", "rgb(0, 177, 64)", "rgb(232, 119, 34)", "rgb(254, 221, 0)"],
+		"sizeHeight": null,
+		"sizeWidth": null,
+		"sizeDimension": null,
+		"imgsrc": ""
+	}]
+},{
+	"id": 4838,
+	"name": "Box LAbels",
+	"client": "GDY",
+	"store": "GoDaddy 1",
+	"type": "Company Logo",
+	"imgsrc": "",
+	"versions": [{
+		"id": 4838-1,
+		"logoType": "Spot Color",
+		"stitchCount": null,
+		"isResizable": true,
+		"description": "Something the user entered when they made this variation...",
+		"colors": ["rgb(255, 255, 255)", "rgb(45, 41, 38)", "rgb(0, 177, 64)", "rgb(232, 119, 34)", "rgb(254, 221, 0)"],
+		"sizeHeight": null,
+		"sizeWidth": null,
+		"sizeDimension": null,
+		"imgsrc": ""
+	},{
+		"id": 4838-2,
+		"logoType": "Embroidery",
+		"stitchCount": "10 SPI",
+		"isResizable": false,
+		"description": "Something the user entered when they made this variation...",
+		"colors": ["rgb(45, 41, 38)", "rgb(232, 119, 34)", "rgb(254, 221, 0)"],
+		"sizeHeight": 3.25,
+		"sizeWidth": 1.75,
+		"sizeDimension": "inches",
+		"imgsrc": ""
+	}]
 }]
 
 export default assetsData;

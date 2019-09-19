@@ -15,7 +15,6 @@ const useStyles = makeStyles(theme => ({
   gridList: {
     width: '100%',
     height: 450,
-    backgroundColor: '#9ccc65',
   },
 }));
 export default function DisplayCardsList(props) {

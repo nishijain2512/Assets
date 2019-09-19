@@ -11,10 +11,11 @@ import AppsIcon from '@material-ui/icons/Apps';
 import logoImage from '../assests/images/logo_cic.png';
 import avatarImage from '../assests/images/avatar.png';
 
+//#017dc3
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    backgroundColor: '#2979ff'
   },
   menuButton: {
     marginRight: theme.spacing(2),

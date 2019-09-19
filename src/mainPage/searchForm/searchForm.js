@@ -21,12 +21,10 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: '#FFFFFF',
         margin: theme.spacing(1),
     },
-    // menu: {
-    //   width: 200,
-    // },
-    // iconSmall: {
-    //     fontSize: 20,
-    // },
+    filterTextField: {
+        backgroundColor: '#FFFFFF',
+        margin: theme.spacing(2),
+    },
     leftIcon: {
         marginLeft: theme.spacing(1),
     },
@@ -94,7 +92,7 @@ const SearchForm = (props) => {
     });
 
     let defaultSearchForm = (
-        <Box display="flex" bgcolor="text.disabled" alignItems="center">
+        <Box display="flex" bgcolor="#cccccc" alignItems="center">
             <Box display="flex" flexGrow={1} alignItems="center">
                 <Box>
                     <FormControl variant="outlined" className={classes.formControl}>
@@ -144,7 +142,7 @@ const SearchForm = (props) => {
     );
 
     const filters = (
-        <Box bgcolor="text.disabled" display="flex">
+        <Box bgcolor="#cccccc" display="flex">
             <FormControl variant="outlined" className={classes.formControl}>
                 <InputLabel shrink htmlFor="age-customized-select">Store</InputLabel>
                 <Select
@@ -184,22 +182,22 @@ const SearchForm = (props) => {
                     {logoTypeMenuItem}
                 </Select>
             </FormControl>
-            <FormControl>
+            <FormControl variant="outlined" className={classes.formControl}>
                 <InputLabel shrink htmlFor="age-customized-Textfield">Logo Type</InputLabel>
                 <TextField
                     id="specific color"
-                    className={classes.textField}
+                    className={classes.filterTextField}
                     placeholder="Start typing...."
                     margin="normal"
                     variant="outlined"
                     
                 />
             </FormControl>
-            <FormControl>
+            <FormControl variant="outlined" className={classes.formControl}>
                 <InputLabel shrink htmlFor="bootstrap-input">Created by</InputLabel>
                 <TextField
                     id="specific color"
-                    className={classes.textField}
+                    className={classes.filterTextField}
                     placeholder="Start typing...."
                     margin="normal"
                     variant="outlined"

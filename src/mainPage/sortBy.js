@@ -7,6 +7,10 @@ const useStyles = makeStyles(theme => ({
         margin: theme.spacing(1),
         minWidth: 120,
     },
+    arrangeLabel: {
+        marginRight: theme.spacing(1),
+        marginLeft: theme.spacing(3),
+    },
   }));
 
 const SortBy = (props) => {
@@ -26,8 +30,8 @@ const SortBy = (props) => {
     });
 
     return (
-        <Box>
-            <Typography width="20" display="inline">Arrange By</Typography>
+        <Box display="flex" alignItems="center">
+            <Typography width="20" display="inline" className={classes.arrangeLabel}>Arrange By</Typography>
             <FormControl variant="outlined" display="inline" className={classes.formControl}>
                 <Select
                     value={sortOption}

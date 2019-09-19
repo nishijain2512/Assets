@@ -19,8 +19,7 @@ import Class from '@material-ui/icons/Class';
 import Store from '@material-ui/icons/Store';
 import Slider from '@material-ui/core/Slider';
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-
+import { Container } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   list: {
@@ -95,14 +94,13 @@ export default function SideNav(props) {
     <div>
       <Drawer open={props.isSideNavOpen} onClose={props.onClickingMenu}>
         {sideList('left')}
-        <Grid>
+        <Container>
             <Typography display="inline" align="left" variant="subtitle1">Current Progress</Typography>
-            
             <Slider
               value={60}
-              valueLabelDisplay="on"
+              valueLabelDisplay="auto"
               orientation="horizontal" />
-        </Grid>
+        </Container>
 
       </Drawer>
     </div>

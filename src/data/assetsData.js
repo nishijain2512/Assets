@@ -1,4 +1,4 @@
-let assetsData = [{
+const assetsData = [{
 	"id": 4816,
 	"name": "Go Daddy For Good",
 	"client": "GDY",
@@ -123,6 +123,7 @@ let assetsData = [{
 	}]
 }]
 
-module.exports = {
-	assetsData
-}
+export default assetsData;
+// module.exports = {
+// 	assetsData
+// }

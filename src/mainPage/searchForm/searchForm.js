@@ -19,18 +19,14 @@ const useStyles = makeStyles(theme => ({
     },
     textField: {
         backgroundColor: '#FFFFFF',
-      marginLeft: theme.spacing(1),
-      marginRight: theme.spacing(1),
+        margin: theme.spacing(1),
     },
-    dense: {
-      marginTop: theme.spacing(2),
-    },
-    menu: {
-      width: 200,
-    },
-    iconSmall: {
-        fontSize: 20,
-    },
+    // menu: {
+    //   width: 200,
+    // },
+    // iconSmall: {
+    //     fontSize: 20,
+    // },
     leftIcon: {
         marginLeft: theme.spacing(1),
     },
@@ -98,49 +94,57 @@ const SearchForm = (props) => {
     });
 
     let defaultSearchForm = (
-        <Box bgcolor="text.disabled">
-            <FormControl variant="outlined" className={classes.formControl}>
-                <Select
-                    value={clientValues}
-                    onChange={clientChangeHandler}
-                    displayEmpty
-                    >
-                    <MenuItem value="Client">
-                        <em>Client</em>
-                    </MenuItem> 
-                    {clientMenuItem}   
-                </Select>
-            </FormControl>
-            <TextField
-                id="asset-id"
-                className={classes.textField}
-                defaultValue="Asset ID"
-                margin="normal"
-                variant="outlined"
-                inputProps={{ 'aria-label': 'bare' }}
-            />
-            <TextField
-                id="keyword"
-                className={classes.textField}
-                placeholder="Keyword"
-                margin="normal"
-                variant="outlined"
-                inputProps={{ 'aria-label': 'bare' }}
-            />
-            <FormControlLabel control={<Checkbox color="primary" />} label="Include Archive" />
-            <Button variant="contained" className={classes.button}>
-                <SearchIcon className={classes.leftIcon} />
-                Search
-            </Button>
-            <Button variant="contained" color="default" className={classes.button} onClick={props.onClickingFilters}>
-                <TuneIcon className={classes.leftIcon} />
-                Filters
-            </Button>
+        <Box display="flex" bgcolor="text.disabled" alignItems="center">
+            <Box display="flex" flexGrow={1} alignItems="center">
+                <Box>
+                    <FormControl variant="outlined" className={classes.formControl}>
+                        <Select
+                            value={clientValues}
+                            onChange={clientChangeHandler}
+                            displayEmpty
+                            >
+                            <MenuItem value="Client">
+                                <em>Client</em>
+                            </MenuItem> 
+                            {clientMenuItem}   
+                        </Select>
+                    </FormControl>
+                    <TextField
+                        id="asset-id"
+                        className={classes.textField}
+                        defaultValue="Asset ID"
+                        margin="normal"
+                        variant="outlined"
+                        //inputProps={{ 'aria-label': 'bare' }}
+                    />
+                    <TextField
+                        id="keyword"
+                        className={classes.textField}
+                        placeholder="Keyword"
+                        margin="normal"
+                        variant="outlined"
+                        //inputProps={{ 'aria-label': 'bare' }}
+                    />
+                </Box>
+                <Box>
+                    <FormControlLabel control={<Checkbox color="primary" />} label="Include Archive" />
+                </Box>
+            </Box>
+            <Box>
+                <Button variant="contained" className={classes.button}>
+                    <SearchIcon className={classes.leftIcon} />
+                    Search
+                </Button>
+                <Button variant="contained" color="default" className={classes.button} onClick={props.onClickingFilters}>
+                    <TuneIcon className={classes.leftIcon} />
+                    Filters
+                </Button>
+            </Box>
         </Box>
     );
 
     const filters = (
-        <Box bgcolor="text.disabled">
+        <Box bgcolor="text.disabled" display="flex">
             <FormControl variant="outlined" className={classes.formControl}>
                 <InputLabel shrink htmlFor="age-customized-select">Store</InputLabel>
                 <Select
@@ -181,14 +185,14 @@ const SearchForm = (props) => {
                 </Select>
             </FormControl>
             <FormControl>
-                <InputLabel shrink htmlFor="bootstrap-input">Logo Type</InputLabel>
+                <InputLabel shrink htmlFor="age-customized-Textfield">Logo Type</InputLabel>
                 <TextField
                     id="specific color"
                     className={classes.textField}
                     placeholder="Start typing...."
                     margin="normal"
                     variant="outlined"
-                    inputProps={{ 'aria-label': 'bare' }}
+                    
                 />
             </FormControl>
             <FormControl>
@@ -199,7 +203,7 @@ const SearchForm = (props) => {
                     placeholder="Start typing...."
                     margin="normal"
                     variant="outlined"
-                    inputProps={{ 'aria-label': 'bare' }}
+                    
                 />
             </FormControl>
         </Box>

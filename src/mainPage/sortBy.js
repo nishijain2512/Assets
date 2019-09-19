@@ -34,9 +34,6 @@ const SortBy = (props) => {
                     onChange={sortByChangeHandler}
                     displayEmpty
                     >
-                    {/* <MenuItem value="Client">
-                        <em>Client</em>
-                    </MenuItem>  */}
                     {sortByMenuItem}   
                 </Select>
             </FormControl>

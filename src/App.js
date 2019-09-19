@@ -3,16 +3,17 @@ import TopNav from './navigation/topNav';
 import SideNav from './navigation/sideNav';
 import SearchForm from './mainPage/searchForm/searchForm';
 import SortBy from './mainPage/sortBy';
+import CardList from './mainPage/cardList';
 import AssetsData from './data/assetsData';
 import Box from '@material-ui/core/Box';
 
-let assetData = AssetsData.assetsData;
+//let assetsData = AssetsData.assetsData;
 
 class App extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      assetsData: {assetData},
+      assetsData: {AssetsData},
       clientList: ['Amazon', 'Go Daddy', 'Microsoft', 'Xerox'],
       storeList: ['Go Daddy Store 1', 'Go Daddy Store 2'],
       assetType: ['Company Logo', 'Store Logo', 'Personal Logo', 'Style Guide', 'Marketing Material'],
@@ -24,7 +25,7 @@ class App extends Component {
     this.toggleMenu = this.toggleMenu.bind(this);
     this.toggleFilters = this.toggleFilters.bind(this);
   }
-
+  
   toggleMenu = () => {
     let previousState = {
       ...this.state
@@ -39,9 +40,18 @@ class App extends Component {
     this.setState({isFiltersOpen: !previousFiltersState.isFiltersOpen});
   };
   
+  
   render() {
+
+    // let asset = this.state.assetsData.AssetsData.map(object => {
+    //   console.log(object);
+    //   return (
+    //     <Card key={object.id} assetItem={object}/>
+    //   );
+    // });
+
     return (
-      <div>
+      <Box>
         <TopNav onClickingMenu={this.toggleMenu}/>
         <SideNav isSideNavOpen={this.state.isSideNavOpen} onClickingMenu={this.toggleMenu}/>
         <Box>
@@ -54,8 +64,9 @@ class App extends Component {
               logoType={this.state.logoType}/>
             <SortBy sortOptions={this.state.sortOptions}/>
         </Box>
+        <CardList assetsData={this.state.assetsData.AssetsData}/>
         
-      </div>
+      </Box>
     );
   }
 }

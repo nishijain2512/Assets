@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import Paper from '@material-ui/core/Paper';
 import TopNav from './navigation/topNav';
 import SideNav from './navigation/sideNav';
 import SearchForm from './mainPage/searchForm/searchForm';
+import SortBy from './mainPage/sortBy';
 import AssetsData from './data/assetsData';
+import Box from '@material-ui/core/Box';
 
 let assetData = AssetsData.assetsData;
 
@@ -16,6 +17,7 @@ class App extends Component {
       storeList: ['Go Daddy Store 1', 'Go Daddy Store 2'],
       assetType: ['Company Logo', 'Store Logo', 'Personal Logo', 'Style Guide', 'Marketing Material'],
       logoType: ['4 Color Process', 'Embroidery File','Laser Engraving File', 'Single Color', 'Spot Color'],
+      sortOptions:['Asset ID', 'Asset Name', 'Created By', 'Create Date', 'Client'],
       isSideNavOpen: false,
       isFiltersOpen: false
     };
@@ -42,7 +44,7 @@ class App extends Component {
       <div>
         <TopNav onClickingMenu={this.toggleMenu}/>
         <SideNav isSideNavOpen={this.state.isSideNavOpen} onClickingMenu={this.toggleMenu}/>
-        <Paper>
+        <Box>
             <SearchForm 
               isFiltersOpen={this.state.isFiltersOpen}
               onClickingFilters={this.toggleFilters}
@@ -50,7 +52,9 @@ class App extends Component {
               storeList={this.state.storeList}
               assetType={this.state.assetType}
               logoType={this.state.logoType}/>
-        </Paper>
+            <SortBy sortOptions={this.state.sortOptions}/>
+        </Box>
+        
       </div>
     );
   }

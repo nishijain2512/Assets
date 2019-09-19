@@ -10,9 +10,6 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 import TuneIcon from '@material-ui/icons/Tune';
-
-
-
 import { Box } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
@@ -55,11 +52,10 @@ const SearchForm = (props) => {
 
     const classes = useStyles();
 
-    const [isFiltersClicked, setIsFiltersClicked] = React.useState(false);
-    const [clientValues, setClientValues] = React.useState('');
-    const [storeList, setstoreList] = React.useState('');
-    const [assetType, setassetType] = React.useState('');
-    const [logoType, setlogoType] = React.useState('');
+    const [clientValues, setClientValues] = React.useState('Client');
+    const [storeList, setstoreList] = React.useState('All');
+    const [assetType, setassetType] = React.useState('All');
+    const [logoType, setlogoType] = React.useState('All');
 
     function clientChangeHandler(event) {
         console.log(event.target.value);
@@ -100,24 +96,6 @@ const SearchForm = (props) => {
             <MenuItem key={element} value={element}>{element}</MenuItem>
         );
     });
-
-    // function filtersButtonClicked(){
-    //     console.log('Filters button clicked');
-    //     console.log(isFiltersClicked)
-    //     if(!isFiltersClicked) {
-    //         console.log('inside if block');
-    //         searchForm = (
-    //             <Box>
-    //                 {defaultSearchForm}
-    //                 {filters}
-    //             </Box>
-    //         );
-    //     }else {
-    //         console.log('inside else block');
-    //         searchForm = {defaultSearchForm};
-    //     }
-    //     setIsFiltersClicked(!isFiltersClicked);
-    // }
 
     let defaultSearchForm = (
         <Box bgcolor="text.disabled">

@@ -23,6 +23,10 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import Divider from '@material-ui/core/Divider';
+import Slider from '@material-ui/core/Slider';
+import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 
 
 const useStyles = makeStyles(theme => ({
@@ -98,114 +102,17 @@ export default function SideNav(props) {
     <div>
       <Drawer open={props.isSideNavOpen} onClose={props.onClickingMenu}>
         {sideList('left')}
+        <Grid>
+            <Typography display="inline" align="left" variant="subtitle1">Current Progress</Typography>
+            
+            <Slider
+              value={60}
+              valueLabelDisplay="on"
+              orientation="horizontal" />
+        </Grid>
+
       </Drawer>
     </div>
   );
 }
 
-
-// const drawerWidth = 240;
-
-// const styles = theme => ({
-//   drawer: {
-//     display: 'flex',
-//     width: drawerWidth,
-//     flexShrink: 0
-//   },
-//   drawerPaper: {
-//     width: drawerWidth,
-//   },
-//   drawerHeader: {
-//     display: 'flex',
-//     alignItems: 'center',
-//     padding: '0 8px',
-//     ...theme.mixins.toolbar,
-//     justifyContent: 'flex-end',
-//   },
-//   nested: {
-//     paddingLeft: theme.spacing(4),
-//   },
-// });
-
-// const sideNav = (props) => {
-
-//     // const [open, setOpen] = React.useState(true);
-
-//     // const handleClick = () => {
-//     //     setOpen(!open);
-//     // }
-    
-//     return (
-//       <div>
-//         <Drawer
-//           className={classes.drawer}
-//           variant="persistent"
-//           anchor="left"
-//           open={isSideNavOpen}
-//           classes={{
-//             paper: classes.drawerPaper,
-//           }} >
-          // <List>
-          //   <ListSubheader>Menu</ListSubheader>
-          //   <ListItem button onClick={() => console.log('HOME clicked') }>
-          //       <ListItemIcon><Home /></ListItemIcon>
-          //       <ListItemText primary="Home" />
-          //   </ListItem>
-          //   <ListItem button onClick={() => console.log('PRODUCTS clicked')}>
-          //       <ListItemIcon><Dashboard /></ListItemIcon>
-          //       <ListItemText primary="Products" />
-          //       {open ? <ExpandLess /> : <ExpandMore />}
-          //   </ListItem>
-          //   <Collapse in={open} timeout="auto" unmountOnExit>
-          //       <List component="div" disablePadding>
-          //           <ListItem button className={classes.nested} onClick={() => console.log('New Product clicked')}>
-          //               <ListItemText primary="+ New Product" />
-          //           </ListItem>
-          //           <ListItem button className={classes.nested} onClick={() => console.log('Products clicked')}>
-          //               <ListItemText primary="Products" />
-          //           </ListItem>
-          //       </List>
-          //   </Collapse>
-          //   <ListItem button onClick={() => console.log('CLIENTS clicked')}>
-          //     <ListItemIcon><Store /></ListItemIcon>
-          //     <ListItemText primary="Clients" />
-          //     {open ? <ExpandLess /> : <ExpandMore />}
-          //   </ListItem>
-          //   <Collapse></Collapse>
-          //   <ListItem button onClick={() => console.log('REPORTS clicked') }>
-          //     <ListItemIcon><Assessment /></ListItemIcon>
-          //     <ListItemText primary="Reports" />
-          //   </ListItem>
-          //   <Collapse></Collapse>
-          //   <ListItem button onClick={() => console.log('SUPPLIERS clicked') }>
-          //     <ListItemIcon><LocalShippingIcon /></ListItemIcon>
-          //     <ListItemText primary="Suppliers" />
-          //   </ListItem>
-          //   <ListItem button onClick={() => console.log('ASSETS clicked') }>
-          //     <ListItemIcon><PermMedia /></ListItemIcon>
-          //     <ListItemText primary="Assets" />
-          //   </ListItem>
-          //   <Collapse></Collapse>
-          //   <ListItem button onClick={() => console.log('TICKETS clicked') }>
-          //     <ListItemIcon><BugReport /></ListItemIcon>
-          //     <ListItemText primary="Tickets" />
-          //   </ListItem>
-          //   <ListItem button onClick={() => console.log('USERS clicked') }>
-          //     <ListItemIcon><SupervisorAccountIcon /></ListItemIcon>
-          //     <ListItemText primary="Users" />
-          //   </ListItem>
-          //   <ListItem button onClick={() => console.log('SYSTEM clicked') }>
-          //     <ListItemIcon><Settings /></ListItemIcon>
-          //     <ListItemText primary="System" />
-          //   </ListItem>
-          //   <ListItem button onClick={() => console.log('DOCUMENTATION clicked') }>
-          //     <ListItemIcon><Class /></ListItemIcon>
-          //     <ListItemText primary="Documentation" />
-          //   </ListItem>
-          // </List>
-//         </Drawer>
-//       </div>  
-//     )
-// }
-
-// export default sideNav;

@@ -55,14 +55,11 @@ const SearchForm = (props) => {
 
     const classes = useStyles();
 
+    const [isFiltersClicked, setIsFiltersClicked] = React.useState(false);
     const [clientValues, setClientValues] = React.useState('');
     const [storeList, setstoreList] = React.useState('');
     const [assetType, setassetType] = React.useState('');
     const [logoType, setlogoType] = React.useState('');
-
-    // const [clientValues, setClientValues] = React.useState({
-    //     value:''
-    //   });
 
     function clientChangeHandler(event) {
         console.log(event.target.value);
@@ -104,6 +101,24 @@ const SearchForm = (props) => {
         );
     });
 
+    // function filtersButtonClicked(){
+    //     console.log('Filters button clicked');
+    //     console.log(isFiltersClicked)
+    //     if(!isFiltersClicked) {
+    //         console.log('inside if block');
+    //         searchForm = (
+    //             <Box>
+    //                 {defaultSearchForm}
+    //                 {filters}
+    //             </Box>
+    //         );
+    //     }else {
+    //         console.log('inside else block');
+    //         searchForm = {defaultSearchForm};
+    //     }
+    //     setIsFiltersClicked(!isFiltersClicked);
+    // }
+
     let defaultSearchForm = (
         <Box bgcolor="text.disabled">
             <FormControl variant="outlined" className={classes.formControl}>
@@ -135,11 +150,11 @@ const SearchForm = (props) => {
                 inputProps={{ 'aria-label': 'bare' }}
             />
             <FormControlLabel control={<Checkbox color="primary" />} label="Include Archive" />
-            <Button variant="contained" className={classes.button} onClick={() => console.log('Filters clicked')}>
+            <Button variant="contained" className={classes.button}>
                 <SearchIcon className={classes.leftIcon} />
                 Search
             </Button>
-            <Button variant="contained" color="default" className={classes.button}>
+            <Button variant="contained" color="default" className={classes.button} onClick={props.onClickingFilters}>
                 <TuneIcon className={classes.leftIcon} />
                 Filters
             </Button>
@@ -212,12 +227,22 @@ const SearchForm = (props) => {
         </Box>
     );
 
-    let searchForm = {defaultSearchForm};
-    
-    return(
+    let displaySearchForm = (
         <Box>
             {defaultSearchForm}
+        </Box>
+    )
+    if (props.isFiltersOpen){
+        displaySearchForm = (
+            <Box>
+            {defaultSearchForm}
             {filters}
+        </Box>
+        )
+    }
+    return(
+        <Box>
+            {displaySearchForm}
         </Box>
     );
 }

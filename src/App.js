@@ -31,10 +31,10 @@ class App extends Component {
   };
 
   toggleFilters =() => {
-    let previousState = {
+    let previousFiltersState = {
       ...this.state
     };
-    this.setState({isFiltersOpen: !previousState.isFiltersOpen});
+    this.setState({isFiltersOpen: !previousFiltersState.isFiltersOpen});
   };
   
   render() {
@@ -45,6 +45,7 @@ class App extends Component {
         <Paper>
             <SearchForm 
               isFiltersOpen={this.state.isFiltersOpen}
+              onClickingFilters={this.toggleFilters}
               clientList={this.state.clientList}
               storeList={this.state.storeList}
               assetType={this.state.assetType}

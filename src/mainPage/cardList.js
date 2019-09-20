@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
-import DisplayCard from './card';
+import DisplayCard from './DisplayCard';
 import { GridListTile } from '@material-ui/core';
 
 
@@ -17,15 +17,14 @@ const useStyles = makeStyles(theme => ({
     height: 450,
   },
 }));
+
 export default function DisplayCardsList(props) {
     const classes = useStyles();
-    console.log(props.assetsData);
 
     let asset = props.assetsData.map(object => {
-        console.log(object);
         return (
-            <GridListTile height="auto">
-                <DisplayCard key={object.id} assetItem={object}/>
+            <GridListTile key={object.id} height="auto">
+                <DisplayCard assetItem={object}/>
             </GridListTile>
         );
     });
@@ -38,9 +37,3 @@ export default function DisplayCardsList(props) {
       </div>
     );
   }
-
-//   {asset.map(element => (
-//     <GridListTile>
-//         element
-//     </GridListTile>
-//   ))}

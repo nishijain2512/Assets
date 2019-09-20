@@ -1,11 +1,12 @@
 import React from 'react';
+import VersionsList from './versionsList';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Typography from '@material-ui/core/Typography';
-import adobeImage from '../assests/images/140x140.png';
+import cardImage from '../assests/images/140x140.png';
 import { Box } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
@@ -23,7 +24,11 @@ const useStyles = makeStyles(theme => ({
   },
   link: {
     color: '#2196f3',
-    marginRight: theme.spacing(1),
+    margin: theme.spacing(1),
+    '&:hover': {
+        color: '#0d47a1',
+        margin: theme.spacing(1),
+    },
   },
   media: {
     height: 200,
@@ -31,24 +36,19 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function CardDisplay(props) {
-    const classes = useStyles();
-    console.log('INSIDE Card: ' + props.assetItem);
+  const classes = useStyles();
 
-    let calcVersion = props.assetItem.versions.length;
-    let versionText = null;
+  let calcVersion = props.assetItem.versions.length;
+  let versionText = null;
 
-    if (calcVersion === 1) {
-        versionText = calcVersion + ' Version';
-    }else {
-        versionText = calcVersion + ' Versions';
-    }
+  versionText = (calcVersion === 1) ? (versionText = calcVersion + ' Version') : (versionText = calcVersion + ' Versions');
 
-    return (
+  return (
       <Card className={classes.card}>
         <CardActionArea>
           <CardMedia
             className={classes.media}
-            image={adobeImage}
+            image={cardImage}
           />
           <CardContent className={classes.cardContent}>
             <Typography variant="subtitle2" component="h2" className={classes.assetName}>
@@ -69,15 +69,10 @@ export default function CardDisplay(props) {
               Asset Type: {props.assetItem.type}
             </Typography>
             <Box display="flex" justifyContent="center">
-                <Typography className ={classes.link} variant="h6" display="inline">
-                    {versionText} 
-                </Typography>
-                <Typography className ={classes.link} variant="h6" display="inline" align="center">
-                    | Add
-                </Typography>
+                <VersionsList data={props.assetItem} versionText={versionText}/>
             </Box>
           </CardContent>
         </CardActionArea>
       </Card>
-    );
-  }
+  );
+}

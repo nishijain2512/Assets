@@ -1,25 +1,26 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import Collapse from '@material-ui/core/Collapse';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import Home from '@material-ui/icons/Home';
-import Dashboard from '@material-ui/icons/Dashboard';
-import Assessment from '@material-ui/icons/Assessment';
-import LocalShippingIcon from '@material-ui/icons/LocalShipping';
-import PermMedia from '@material-ui/icons/PermMedia';
-import BugReport from '@material-ui/icons/BugReport';
+import 
+{ Drawer,
+  Container,
+  Typography,
+  Slider,
+  ListSubheader,
+  ListItemText,
+  ListItemIcon,
+  ListItem,
+  List } from '@material-ui/core';
+import {Home, 
+  Dashboard, 
+  Assessment, 
+  PermMedia,
+  BugReport, 
+  Settings,
+  Class,
+  Store} from '@material-ui/icons';
+  
+import LocalShippingIcon from '@material-ui/icons/LocalShipping';  
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
-import Settings from '@material-ui/icons/Settings';
-import Class from '@material-ui/icons/Class';
-import Store from '@material-ui/icons/Store';
-import Slider from '@material-ui/core/Slider';
-import Typography from '@material-ui/core/Typography';
-import { Container } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   list: {
@@ -43,24 +44,22 @@ export default function SideNav(props) {
               <ListItemIcon><Home /></ListItemIcon>
               <ListItemText primary="Home" />
           </ListItem>
+
           <ListItem button onClick={() => console.log('PRODUCTS clicked')}>
               <ListItemIcon><Dashboard /></ListItemIcon>
               <ListItemText primary="Products" />
               
           </ListItem>
-          <Collapse >
-          </Collapse>
+
           <ListItem button onClick={() => console.log('CLIENTS clicked')}>
             <ListItemIcon><Store /></ListItemIcon>
             <ListItemText primary="Clients" />
-            
           </ListItem>
-          <Collapse></Collapse>
+
           <ListItem button onClick={() => console.log('REPORTS clicked') }>
             <ListItemIcon><Assessment /></ListItemIcon>
             <ListItemText primary="Reports" />
           </ListItem>
-          <Collapse></Collapse>
           <ListItem button onClick={() => console.log('SUPPLIERS clicked') }>
             <ListItemIcon><LocalShippingIcon /></ListItemIcon>
             <ListItemText primary="Suppliers" />
@@ -69,19 +68,22 @@ export default function SideNav(props) {
             <ListItemIcon><PermMedia /></ListItemIcon>
             <ListItemText primary="Assets" />
           </ListItem>
-          <Collapse></Collapse>
+
           <ListItem button onClick={() => console.log('TICKETS clicked') }>
             <ListItemIcon><BugReport /></ListItemIcon>
             <ListItemText primary="Tickets" />
           </ListItem>
+
           <ListItem button onClick={() => console.log('USERS clicked') }>
             <ListItemIcon><SupervisorAccountIcon /></ListItemIcon>
             <ListItemText primary="Users" />
           </ListItem>
+
           <ListItem button onClick={() => console.log('SYSTEM clicked') }>
             <ListItemIcon><Settings /></ListItemIcon>
             <ListItemText primary="System" />
           </ListItem>
+
           <ListItem button onClick={() => console.log('DOCUMENTATION clicked') }>
             <ListItemIcon><Class /></ListItemIcon>
             <ListItemText primary="Documentation" />

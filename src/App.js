@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import TopNav from './navigation/topNav';
 import SideNav from './navigation/sideNav';
-import SearchForm from './mainPage/searchForm/searchForm';
+import SearchForm from './mainPage/searchForm';
 import SortBy from './mainPage/sortBy';
 import CardList from './mainPage/cardList';
 import AssetsData from './data/assetsData';
 import Box from '@material-ui/core/Box';
-
-//let assetsData = AssetsData.assetsData;
 
 class App extends Component {
   constructor (props) {
@@ -42,14 +40,6 @@ class App extends Component {
   
   
   render() {
-
-    // let asset = this.state.assetsData.AssetsData.map(object => {
-    //   console.log(object);
-    //   return (
-    //     <Card key={object.id} assetItem={object}/>
-    //   );
-    // });
-
     return (
       <Box>
         <TopNav onClickingMenu={this.toggleMenu}/>
@@ -63,9 +53,8 @@ class App extends Component {
               assetType={this.state.assetType}
               logoType={this.state.logoType}/>
             <SortBy sortOptions={this.state.sortOptions}/>
+            <CardList assetsData={this.state.assetsData.AssetsData}/>
         </Box>
-        <CardList assetsData={this.state.assetsData.AssetsData}/>
-        
       </Box>
     );
   }
